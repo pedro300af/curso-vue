@@ -1,0 +1,53 @@
+<template>
+    <div class="entry-title d-flex justify-content-between p-2">
+        <div>
+            <span class="text-success fs-3 fw-bold">15</span>
+            <span class="mx-1 fs-3">15</span>
+            <span class="mx-2 fs-4 fw-light">15</span>
+        </div>
+        <div>
+            <button class="btn btn-danger mx-2">
+                borrar
+                <i class="fa fa-trash-alt"></i>
+            </button>
+            <button class="btn btn-primary">
+                Subir foto
+                <i class="fa fa-upload"></i>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="d-flex flex-column px-3 h-75">
+        <textarea placeholder="que sucedio"></textarea>
+    </div>
+    <FabVue icon="fa-save" />
+    <img class="img-fluid img-thumbnail shadow" src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4HELg?q=90&o=f&w=480&h=270" alt="entry">
+</template>
+<script>
+    import {
+        defineAsyncComponent
+    } from "vue";
+    export default {
+        components: {
+            FabVue: defineAsyncComponent(() => import('../components/FabVue.vue'))
+        }
+    }
+</script>
+
+<style lang="scss" scoped>
+textarea{
+    font-size: 20px;
+    border: none;
+    height: 100%;
+
+    &:focus{
+        outline: none;
+    }
+}
+img{
+    width: 200px;
+    position: fixed;
+    bottom: 150px;
+    right: 20px;
+}
+</style>
